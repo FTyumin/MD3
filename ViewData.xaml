@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MD3.ViewData"
+             Title="ViewData">
+    <VerticalStackLayout Spacing="20">
+        <Button 
+        x:Name="TeacherBtn"
+        Text="Teacher Info"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Clicked="TeacherBtn_Clicked"
+        WidthRequest="200"
+        BackgroundColor="#2E294E"/>
+
+        <Button 
+        x:Name="StudentBtn"
+        Text="Student Info"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Clicked="StudentBtn_Clicked"
+        WidthRequest="200"
+        BackgroundColor="#2E294E"/>
+
+        <Button 
+        x:Name="CourseBtn"
+        Text="Course Info"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Clicked="CourseBtn_Clicked"
+        WidthRequest="200"
+        BackgroundColor="#2E294E"/>
+
+        <Button 
+        x:Name="AssignmentBtn"
+        Text="Assignment Info"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Clicked="AssignmentBtn_Clicked"
+        WidthRequest="200"
+        BackgroundColor="#2E294E"/>
+
+        <Button 
+        x:Name="SubmissionBtn"
+        Text="Submission Info"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Clicked="SubmissionBtn_Clicked"
+        WidthRequest="200"
+        BackgroundColor="#2E294E"/>
+
+        <Button 
+        x:Name="LoadBtn"
+        Text="Load Test Data"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        Clicked="LoadBtn_Clicked"
+        WidthRequest="200"
+        BackgroundColor="#4B5267"/>
+
+        <Border Stroke="Beige" StrokeThickness="8" Padding="5" HeightRequest="300" WidthRequest="600">
+            <Label 
+            x:Name="data"
+            FontSize="18"
+            />
+        </Border>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

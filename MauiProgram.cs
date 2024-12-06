@@ -1,5 +1,4 @@
-﻿using MD3.DB;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace MD3
 {

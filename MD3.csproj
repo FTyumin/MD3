@@ -78,4 +78,29 @@
 	  <ProjectReference Include="..\MD1\MD1\MD1.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="ViewData.xaml.cs">
+	    <DependentUpon>ViewData.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="CreatePages\CreateAssignment.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CreatePages\CreateStudent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="CreatePages\CreateSubmission.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewData.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="DB\" />
+	</ItemGroup>
+
 </Project>

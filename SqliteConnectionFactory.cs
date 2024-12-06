@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MD3.DB
+namespace MD3
 {
     public class SqliteConnectionFactory
     {
