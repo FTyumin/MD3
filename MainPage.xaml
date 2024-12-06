@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MD3.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+
+
+            <Button 
+            x:Name="DataView"
+            Text="View Data"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="200"
+            BackgroundColor="#4A148C"/>    
+            <!--Clicked="OnButtonClicked"-->
+            
+
+            <Button 
+            x:Name="DataFile"
+            Text="Load to/from a file"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="200"
+            BackgroundColor="#4A148C"/>    
+            <!--Clicked="DataFile_Clicked"-->
+            
+
+            <Button 
+            x:Name="CreateFile"
+            Text="Create Data"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="200"
+            BackgroundColor="#4A148C"/>    
+            <!--Clicked="CreateFile_Clicked"-->
+            
+
+            <Button 
+            x:Name="EditDelete"
+            Text="Edit/Delete Data"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="200"
+            BackgroundColor="#4A148C"/>    
+            <!--Clicked="EditDelete_Clicked"-->
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>
