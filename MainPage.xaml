@@ -15,28 +15,21 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             WidthRequest="200"
-            BackgroundColor="#4A148C"/>    
-            <!--Clicked="OnButtonClicked"-->
+            BackgroundColor="#4A148C"   
+            Clicked="DataView_Clicked"/>
+
+
+
             
 
             <Button 
-            x:Name="DataFile"
-            Text="Load to/from a file"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            WidthRequest="200"
-            BackgroundColor="#4A148C"/>    
-            <!--Clicked="DataFile_Clicked"-->
-            
-
-            <Button 
-            x:Name="CreateFile"
+            x:Name="CreateData"
             Text="Create Data"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             WidthRequest="200"
             BackgroundColor="#4A148C"/>    
-            <!--Clicked="CreateFile_Clicked"-->
+            <!--Clicked="CreateData_Clicked"-->
             
 
             <Button 

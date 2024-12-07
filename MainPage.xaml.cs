@@ -4,17 +4,20 @@ namespace MD3
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private readonly SqliteConnectionFactory _connectionFactory;
 
         public MainPage()
         {
             InitializeComponent();
+            _connectionFactory = new SqliteConnectionFactory();
         }
+
+       
 
         async void DataView_Clicked(object sender, EventArgs args)
         {
-
-            //await Navigation.PushAsync(new ViewData());
+         
+            await Navigation.PushAsync(new ViewData(_connectionFactory));
 
         }
 
@@ -23,7 +26,7 @@ namespace MD3
             //await Navigation.PushAsync(new FilePage());
         }
 
-        async void CreateFile_Clicked(object sender, EventArgs e)
+        async void CreateData_Clicked(object sender, EventArgs e)
         {
             //await Navigation.PushAsync(new CreateData());
         }

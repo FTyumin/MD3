@@ -12,8 +12,10 @@ namespace MD3
             InitializeComponent();
 
             MainPage = new AppShell();
+            
 
             _connectionFactory = connectionFactory;
+            //Application.Current.MainPage = new NavigationPage(new CreateData(_connectionFactory));
         }
 
         protected override async void OnStart()
