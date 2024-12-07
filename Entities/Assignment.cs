@@ -16,6 +16,17 @@ namespace MD3.Entities
         public int CourseId { get; set; }
         public string Description { get; set; }
 
+
+        public Assignment(int id, DateTime deadline, int courseId, string description)
+        {
+            Id = id;
+            Deadline = deadline;
+            CourseId = courseId;
+            Description = description;
+        }
+
+        public Assignment() { }
+
         //public virtual Course Course { get; set; }
         //public virtual ICollection<Submission> Submissions { get; set; }
     }

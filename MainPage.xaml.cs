@@ -21,14 +21,10 @@ namespace MD3
 
         }
 
-        async void DataFile_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new FilePage());
-        }
-
+       
         async void CreateData_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new CreateData());
+            await Navigation.PushAsync(new CreateData(_connectionFactory));
         }
 
         async void EditDelete_Clicked(object sender, EventArgs e)

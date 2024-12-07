@@ -28,9 +28,9 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             WidthRequest="200"
-            BackgroundColor="#4A148C"/>    
-            <!--Clicked="CreateData_Clicked"-->
-            
+            BackgroundColor="#4A148C"   
+            Clicked="CreateData_Clicked"/>
+
 
             <Button 
             x:Name="EditDelete"

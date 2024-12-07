@@ -16,4 +16,9 @@ public partial class CreateData : ContentPage
     {
         await Navigation.PushAsync(new CreateStudent(_connectionFactory));
     }
+
+    async void AssignmentBtn_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CreateAssignment(_connectionFactory));
+    }
 }

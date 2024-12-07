@@ -9,12 +9,16 @@ public partial class ViewData : ContentPage
 {
     private readonly SqliteConnectionFactory _connectionFactory;
     public ObservableCollection<Student> Students { get; private set; }
+    public ObservableCollection<Assignment> Assignments { get; private set; }
     public ViewData(SqliteConnectionFactory connectionFactory)
 	{
 		InitializeComponent();
         _connectionFactory = connectionFactory;
         Students = new ObservableCollection<Student>();
+        Assignments = new ObservableCollection<Assignment>();
     }
+
+
 
 	private void TeacherBtn_Clicked(object sender, EventArgs e)
 	{
@@ -27,11 +31,7 @@ public partial class ViewData : ContentPage
 
         try
             {
-            if (_connectionFactory == null)
-            {
-                await DisplayAlert("Error", "Connection factory is null. Ensure it is passed correctly.", "OK");
-                return;
-            }
+            
             ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
 
                 List<Student> students = await database.Table<Student>().ToListAsync();
@@ -44,7 +44,7 @@ public partial class ViewData : ContentPage
                         student.Gender, student.StudentIdNumber));
                 }
             data.Text = string.Join("\n", Students.Select(student =>
-    $"{student.Name} {student.Surname}, Gender: {student.Gender}, ID: {student.StudentIdNumber}"));
+                 $"{student.Name} {student.Surname}, Gender: {student.Gender}, ID: {student.StudentIdNumber}"));
             }
             catch (Exception ex)
             {
@@ -60,9 +60,29 @@ public partial class ViewData : ContentPage
 
     }
 
-    private void AssignmentBtn_Clicked(object sender, EventArgs e)
+    async void AssignmentBtn_Clicked(object sender, EventArgs e)
     {
+        try
+        {
 
+            ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
+
+            List<Assignment> assignments = await database.Table<Assignment>().ToListAsync();
+
+            Assignments.Clear();
+
+            foreach (var assignment in assignments)
+            {
+                Assignments.Add(new Assignment(assignment.Id,assignment.Deadline,
+                    assignment.CourseId, assignment.Description));
+            }
+            data.Text = string.Join("\n", Assignments.Select(assignment =>
+                 $" Deadline:{assignment.Deadline},Course ID:{assignment.CourseId}, Description: {assignment.Description}, "));
+        }
+        catch (Exception ex)
+        {
+            data.Text = "Dirsaa ir,vecit";
+        }
     }
 
     private void SubmissionBtn_Clicked(object sender, EventArgs e)

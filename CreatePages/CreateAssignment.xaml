@@ -3,10 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MD3.CreatePages.CreateAssignment"
              Title="CreateAssignment">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <!--datuma formāts ir dd/MM/yyyy, bet kodā jāraksta MM/dd/yyyy-->
+        <DatePicker
+        x:Name="DueDate"
+        MinimumDate="10/28/2024"
+        MaximumDate="12/28/2024"
+        Date="10/28/2024"
+        Format="dd/MM/yyyy"
+        WidthRequest="300"
+    />
+
+        <Entry 
+        x:Name="AssignmentNameEntry"
+        Placeholder="Enter Assignment Name"
+        WidthRequest="300"/>
+
+        <Picker 
+        x:Name="CoursePicker"
+        Title="Select Course"
+        WidthRequest="300">
+        </Picker>
+
+        <Entry 
+        x:Name="AssignmentDescription"
+        Placeholder="Enter Assignment Description"
+        WidthRequest="300"/>
+
+        <Button Text="Save Assignment" Clicked="CreateAssignmentCommand" WidthRequest="300" />
+        <Label x:Name="MessageLabel" />
     </VerticalStackLayout>
 </ContentPage>
