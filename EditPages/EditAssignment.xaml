@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MD3.EditPages.EditAssignment"
+             Title="EditAssignment">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <!--datuma formāts ir dd/MM/yyyy, bet kodā jāraksta MM/dd/yyyy-->
+        <DatePicker
+            x:Name="DueDate"
+            MinimumDate="10/28/2024"
+            MaximumDate="12/28/2024"
+            Date="10/28/2024"
+            Format="dd/MM/yyyy"
+/>
+
+
+        <Entry 
+            x:Name="AssignmentNameEntry"
+            Placeholder="Enter Assignment Name" />
+        <Label
+            x:Name="AssignmentName">
+        </Label>
+
+        <Picker 
+            x:Name="CoursePicker"
+            Title="Select Course">
+        </Picker>
+        
+        <!--<Button Text="Save Assignment" Clicked="OnSaveChangesClicked" />-->
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MD3.EditDelete"
+             Title="EditDelete">
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="20">
+
+            <Label Text="Assignments" FontAttributes="Bold" FontSize="Medium" />
+            <!--Attēlo uzdevumus-->
+            <!--<ListView x:Name="AssignmentListView" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5" Spacing="20">
+                                <Label Text="{Binding Description}" VerticalOptions="Center" />
+                                <Label Text="{Binding Deadline, StringFormat='Due: {0:MM/dd/yyyy}'}" VerticalOptions="Center" />
+
+                                <Button Text="Edit" Clicked="OnEditAssignmentClicked" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
+                                <Button Text="Delete" Clicked="OnDeleteAssignmentClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="Submissions" FontAttributes="Bold" FontSize="Medium" />-->
+
+            <!--Attēlo iesniegumus-->
+            <!--<ListView x:Name="SubmissionListView" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5" Spacing="20">
+                                <Label Text="{Binding Assignment.Description}" VerticalOptions="Center" />
+                                <Label Text="{Binding SubmissionTime, StringFormat=' Submitted on: {0:MM/dd/yyyy}'} " VerticalOptions="Center" />
+                                <Label Text="{Binding Student}" VerticalOptions="Center"/>
+
+                                <Button Text="Edit" Clicked="OnEditSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
+                                <Button Text="Delete" Clicked="OnDeleteSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <ListView x:Name="StudentListView" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5" Spacing="20">
+                                <Label Text="{Binding Assignment.Description}" VerticalOptions="Center" />
+                                <Label Text="{Binding SubmissionTime, StringFormat=' Submitted on: {0:MM/dd/yyyy}'} " VerticalOptions="Center" />
+                                <Label Text="{Binding Student}" VerticalOptions="Center"/>
+
+                                <Button Text="Edit" Clicked="OnEditSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
+                                <Button Text="Delete" Clicked="OnDeleteSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

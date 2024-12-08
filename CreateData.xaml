@@ -14,7 +14,7 @@
 
         <Button 
          x:Name="AssignmentBtn"
-         Text="Add students"
+         Text="Add assignments"
          VerticalOptions="Center"
          HorizontalOptions="Center"
          Clicked="AssignmentBtn_Clicked"

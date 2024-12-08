@@ -18,6 +18,8 @@ namespace MD3.Entities
         public int StudentIdNumber { get; set; }
         //public virtual ICollection<Submission> Submissions { get; set; }
 
+        [Ignore] // Prevent this property from being treated as a column in SQLite
+        public List<Submission> Submissions { get; set; }
         public Student(int id, string name, string surname, string gender, int studentIdNumber)
         {
             Id = id;
@@ -25,8 +27,12 @@ namespace MD3.Entities
             Surname = surname;
             Gender = gender;
             StudentIdNumber = studentIdNumber;
+            Submissions = new List<Submission>();
         }
 
-        public Student() { }
+        public Student() 
+        {
+            Submissions = new List<Submission>();
+        }
     }
 }

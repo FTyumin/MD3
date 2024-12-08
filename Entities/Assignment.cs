@@ -16,6 +16,10 @@ namespace MD3.Entities
         public int CourseId { get; set; }
         public string Description { get; set; }
 
+        [Ignore] // Prevent this property from being treated as a column in SQLite
+        public Course course { get; set; }
+        [Ignore]
+        public List<Submission> Submissions { get; set; }
 
         public Assignment(int id, DateTime deadline, int courseId, string description)
         {
@@ -24,6 +28,7 @@ namespace MD3.Entities
             CourseId = courseId;
             Description = description;
         }
+
 
         public Assignment() { }
 

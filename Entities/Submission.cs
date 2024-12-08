@@ -17,6 +17,24 @@ namespace MD3.Entities
         public DateTime SubmissionTime { get; set; }
         public int Score { get; set; }
 
+        [Ignore] // Prevent this property from being treated as a column in SQLite
+        public Student Student { get; set; }
+        [Ignore]
+        public Assignment Assignment { get; set; }
+        
+
+        public Submission(int id, int assignmentId, int studentId, DateTime submissionTime, int score)
+        {
+            Id = id;
+            AssignmentId = assignmentId;
+            StudentId = studentId;
+            SubmissionTime = submissionTime;
+            Score = score;
+        }
+
+        public Submission() { }
+
+
         //public virtual Assignment Assignment { get; set; }
         //public virtual Student Student { get; set; }
     }

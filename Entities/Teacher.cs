@@ -17,6 +17,19 @@ namespace MD3.Entities
         public string Gender { get; set; }
         public DateTime ContractDate { get; set; }
 
+        [Ignore]
+        public List<Course> Courses { get; set; }
+
+        public Teacher(int id, string name, string surname)
+        {
+            ID=id;
+            Name = name;
+            Surname = surname;
+            Courses = new List<Course>();
+        }
+
+        public Teacher() { }
+
         //public virtual ICollection<Course> Courses { get; set; }
     }
 }

@@ -17,5 +17,18 @@ namespace MD3.Entities
         public int TeacherId { get; set; }
         //public virtual Teacher Teacher { get; set; }
         //public virtual ICollection<Assignment> Assignments { get; set; }
+        [Ignore]
+        public List<Assignment> Assignments { get; set; }
+        [Ignore]
+        public Teacher teacher { get; set; }
+
+        public Course(int id, string name, int teacherId)
+        {
+            Id = id;
+            Name = name;
+            TeacherId = teacherId;
+            Assignments = new List<Assignment>();
+        }
+        public Course() { }
     }
 }
