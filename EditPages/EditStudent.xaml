@@ -20,6 +20,8 @@
             </Picker.Items>
         </Picker>
 
+        <Button Text="Save Student" Clicked="SaveStudentCommand" WidthRequest="300" />
+
         <Label x:Name="MessageLabel" />
     </VerticalStackLayout>
 </ContentPage>

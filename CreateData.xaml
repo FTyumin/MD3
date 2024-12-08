@@ -19,5 +19,15 @@
          HorizontalOptions="Center"
          Clicked="AssignmentBtn_Clicked"
          WidthRequest="200"/>
+
+        <Button 
+         x:Name="SubmissionBtn"
+         Text="Add submissions"
+         VerticalOptions="Center"
+         HorizontalOptions="Center"
+         Clicked="SubmissionBtn_Clicked"
+         WidthRequest="200"/>
+
+
     </VerticalStackLayout>
 </ContentPage>

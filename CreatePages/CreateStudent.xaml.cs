@@ -20,10 +20,11 @@ public partial class CreateStudent : ContentPage
 
         _connectionFactory = connectionFactory;
         Students = new ObservableCollection<Student>();
-        LoadStudents();
+        LoadData();
+
     }
 
-    public async void LoadStudents()
+    public async void LoadData()
     {
         try
         {
@@ -37,6 +38,7 @@ public partial class CreateStudent : ContentPage
                 Students.Add(new Student(student.Id, student.Name, student.Surname,
                     student.Gender, student.StudentIdNumber));
             }
+
         }
         catch (Exception ex)
         {

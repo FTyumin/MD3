@@ -29,7 +29,7 @@ namespace MD3
 
         async void EditDelete_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new EditDelete());
+            await Navigation.PushAsync(new EditDelete(_connectionFactory));
         }
     }
 

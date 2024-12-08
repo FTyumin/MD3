@@ -38,9 +38,9 @@
             VerticalOptions="Center"
             HorizontalOptions="Center"
             WidthRequest="200"
-            BackgroundColor="#4A148C"/>    
-            <!--Clicked="EditDelete_Clicked"-->
-            
+            BackgroundColor="#4A148C"   
+            Clicked="EditDelete_Clicked"/>
+
 
         </VerticalStackLayout>
     </ScrollView>

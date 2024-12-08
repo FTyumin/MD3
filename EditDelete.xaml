@@ -7,8 +7,7 @@
         <VerticalStackLayout Padding="10" Spacing="20">
 
             <Label Text="Assignments" FontAttributes="Bold" FontSize="Medium" />
-            <!--Attēlo uzdevumus-->
-            <!--<ListView x:Name="AssignmentListView" HasUnevenRows="True" >
+            <ListView x:Name="AssignmentListView" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -16,18 +15,17 @@
                                 <Label Text="{Binding Description}" VerticalOptions="Center" />
                                 <Label Text="{Binding Deadline, StringFormat='Due: {0:MM/dd/yyyy}'}" VerticalOptions="Center" />
 
-                                <Button Text="Edit" Clicked="OnEditAssignmentClicked" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
-                                <Button Text="Delete" Clicked="OnDeleteAssignmentClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />
+                                <Button Text="Edit" Clicked="EditAssignmentCommand" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
+                                <!--<Button Text="Delete" Clicked="OnDeleteAssignmentClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label Text="Submissions" FontAttributes="Bold" FontSize="Medium" />-->
+            <Label Text="Submissions" FontAttributes="Bold" FontSize="Medium" />
 
-            <!--Attēlo iesniegumus-->
-            <!--<ListView x:Name="SubmissionListView" HasUnevenRows="True" >
+            <ListView x:Name="SubmissionListView" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -36,25 +34,24 @@
                                 <Label Text="{Binding SubmissionTime, StringFormat=' Submitted on: {0:MM/dd/yyyy}'} " VerticalOptions="Center" />
                                 <Label Text="{Binding Student}" VerticalOptions="Center"/>
 
-                                <Button Text="Edit" Clicked="OnEditSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
-                                <Button Text="Delete" Clicked="OnDeleteSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />
+                                <Button Text="Edit" Clicked="EditSubmissionCommand" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
+                                <!--<Button Text="Delete" Clicked="DeleteSubmissionCommand" CommandParameter="{Binding .}" BackgroundColor="Red" />-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
-
-            <ListView x:Name="StudentListView" HasUnevenRows="True" >
+            </ListView>
+            
+            <Label Text="Students" FontAttributes="Bold" FontSize="Medium" />
+            <ListView x:Name="StudentListView" HasUnevenRows="True" ItemsSource="{Binding Students}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5" Spacing="20">
-                                <Label Text="{Binding Assignment.Description}" VerticalOptions="Center" />
-                                <Label Text="{Binding SubmissionTime, StringFormat=' Submitted on: {0:MM/dd/yyyy}'} " VerticalOptions="Center" />
-                                <Label Text="{Binding Student}" VerticalOptions="Center"/>
-
-                                <Button Text="Edit" Clicked="OnEditSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
-                                <Button Text="Delete" Clicked="OnDeleteSubmissionClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />
+                                <Label Text="{Binding Name}" FontSize="Medium" VerticalOptions="Center" />
+                                <Label Text="{Binding Surname}" FontSize="Medium" VerticalOptions="Center" />
+                                <Button Text="Edit" Clicked="EditStudentCommand" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
+                                <Button Text="Delete" Clicked="DeleteStudentCommand" CommandParameter="{Binding .}" BackgroundColor="Red" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

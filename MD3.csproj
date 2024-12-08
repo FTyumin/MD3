@@ -116,6 +116,7 @@
 
 	<ItemGroup>
 	  <Folder Include="DB\" />
+	  <Folder Include="ViewPages\" />
 	</ItemGroup>
 
 	<ItemGroup>
