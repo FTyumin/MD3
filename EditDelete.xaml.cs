@@ -198,16 +198,13 @@ public partial class EditDelete : ContentPage
         }
     }
 
-
-
-
-
-
     private async void EditSubmissionCommand(object sender, EventArgs e)
     {
         var button = sender as Button;
         var submission = button?.CommandParameter as Submission;
         await Navigation.PushAsync(new EditPages.EditSubmission(_connectionFactory, submission));
     }
+
+    
 
 }

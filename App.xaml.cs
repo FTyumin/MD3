@@ -15,11 +15,11 @@ namespace MD3
             
 
             _connectionFactory = connectionFactory;
-            //Application.Current.MainPage = new NavigationPage(new CreateData(_connectionFactory));
         }
 
         protected override async void OnStart()
         {
+            // šo kodu ņēmu no "Connect Your .NET MAUI Application to a Database - Singleton Sean"
             ISQLiteAsyncConnection database = _connectionFactory.CreateConnection();
 
             await database.CreateTableAsync<Assignment>();

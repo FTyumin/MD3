@@ -49,14 +49,7 @@
         WidthRequest="200"
         BackgroundColor="#2E294E"/>
 
-        <Button 
-        x:Name="LoadBtn"
-        Text="Load Test Data"
-        VerticalOptions="Center"
-        HorizontalOptions="Center"
-        Clicked="LoadBtn_Clicked"
-        WidthRequest="200"
-        BackgroundColor="#4B5267"/>
+        
 
         <Border Stroke="Beige" StrokeThickness="8" Padding="5" HeightRequest="300" WidthRequest="600">
             <Label 

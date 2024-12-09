@@ -7,6 +7,7 @@ public partial class CreateAssignment : ContentPage
 {
     private readonly SqliteConnectionFactory _connectionFactory;
     public ObservableCollection<Assignment> Assignments { get; private set; }
+    private readonly ObservableCollection<Course> _courses;
     public CreateAssignment(SqliteConnectionFactory connectionFactory)
 	{
 		InitializeComponent();
@@ -19,6 +20,8 @@ public partial class CreateAssignment : ContentPage
 
         _connectionFactory = connectionFactory;
         Assignments = new ObservableCollection<Assignment>();
+        _courses = new ObservableCollection<Course>();
+
         LoadAssignments();
     }
 
@@ -36,6 +39,12 @@ public partial class CreateAssignment : ContentPage
                 //Assignments.Add(new Assignment(assignment.Id, assignment.Deadline, assignment.Description,
                 //    assignment.CourseId, assignment.Description));
             }
+            List<Course> courses = await database.Table<Course>().ToListAsync();
+            foreach(var course in courses)
+            {
+                _courses.Add(course);
+            }
+            CoursePicker.ItemsSource = _courses;
         } catch (Exception ex) {
             MessageLabel.Text = $"Error loading students: {ex.Message}";
         }
@@ -46,6 +55,8 @@ public partial class CreateAssignment : ContentPage
         DateTime date = DueDate.Date;
         string title = AssignmentNameEntry.Text;
         string description = AssignmentDescription.Text;
+        var selectedCourse = CoursePicker.SelectedItem as Course;
+        int course_id = selectedCourse?.Id ?? 0;
 
         try
         {
@@ -54,7 +65,7 @@ public partial class CreateAssignment : ContentPage
             Assignment newAssignment = new Assignment
             {
                 Deadline = date,
-                CourseId = new Random().Next(100000, 999999),
+                CourseId = course_id,
                 Description = description,
             };
 

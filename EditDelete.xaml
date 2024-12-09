@@ -15,8 +15,9 @@
                                 <Label Text="{Binding Description}" VerticalOptions="Center" />
                                 <Label Text="{Binding Deadline, StringFormat='Due: {0:MM/dd/yyyy}'}" VerticalOptions="Center" />
 
+                                <!--<Button Text="View" Clicked="ViewAssignmentCommand" />-->
                                 <Button Text="Edit" Clicked="EditAssignmentCommand" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
-                                <!--<Button Text="Delete" Clicked="OnDeleteAssignmentClicked" CommandParameter="{Binding .}" BackgroundColor="Red" />-->
+                                <Button Text="Delete" Clicked="DeleteAssignmentCommand" CommandParameter="{Binding .}" BackgroundColor="Red" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
@@ -35,7 +36,7 @@
                                 <Label Text="{Binding Student}" VerticalOptions="Center"/>
 
                                 <Button Text="Edit" Clicked="EditSubmissionCommand" CommandParameter="{Binding .}" BackgroundColor="#777DA7" />
-                                <!--<Button Text="Delete" Clicked="DeleteSubmissionCommand" CommandParameter="{Binding .}" BackgroundColor="Red" />-->
+                                <Button Text="Delete" Clicked="DeleteSubmissionCommand" CommandParameter="{Binding .}" BackgroundColor="Red" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

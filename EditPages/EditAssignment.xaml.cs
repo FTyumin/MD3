@@ -23,6 +23,7 @@ public partial class EditAssignment : ContentPage
         // Pre-fill fields with assignment data
         AssignmentNameEntry.Text = _assignment.Description;
         DueDate.Date = _assignment.Deadline;
+        CoursePicker.ItemsSource = _courses;
     }
 
     private async void LoadCourses()
